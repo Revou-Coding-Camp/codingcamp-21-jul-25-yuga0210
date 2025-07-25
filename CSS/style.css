@@ -1,0 +1,134 @@
+:root {
+  --bg-color: #1e1e2f;
+  --container-bg: #2b2b3c;
+  --text-color: white;
+  --input-bg: #3a3a5a;
+  --button-bg: #7878f5;
+  --table-bg: #1c1c2a;
+  --editable-bg: #3a3a5a;
+}
+
+body.light {
+  --bg-color: #f9f9f9;
+  --container-bg: #ffffff;
+  --text-color: #222;
+  --input-bg: #ececec;
+  --button-bg: #5c7cfa;
+  --table-bg: #f0f0f0;
+  --editable-bg: #e0e0e0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background-color: var(--container-bg);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--button-bg);
+  color: white;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--table-bg);
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+td[contenteditable="true"] {
+  background-color: var(--editable-bg);
+  border: 1px dashed #ccc;
+}
+
+/* Tombol Scroll */
+#scrollTopBtn,
+#scrollBottomBtn {
+  position: fixed;
+  right: 20px;
+  padding: 12px 16px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--button-bg);
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+  display: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+}
+
+#scrollTopBtn {
+  bottom: 80px;
+}
+
+#scrollBottomBtn {
+  bottom: 20px;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-toggle button {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 50%;
+}

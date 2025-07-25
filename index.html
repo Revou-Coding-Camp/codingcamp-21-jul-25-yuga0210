@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()" id="themeButton">🌙</button>
+    </div>
+
+    <div class="container">
+      <h1>Todo List</h1>
+      <div class="form">
+        <input type="text" id="todoInput" placeholder="Add a todo..." />
+        <input type="date" id="dateInput" />
+        <button onclick="addTask()">+</button>
+      </div>
+
+      <div class="actions">
+        <select id="filterSelect" onchange="filterTasks()">
+          <option value="all">All</option>
+          <option value="done">Done</option>
+          <option value="pending">Pending</option>
+        </select>
+        <button onclick="deleteAll()">DELETE ALL</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="todoList">
+          <tr>
+            <td colspan="4">No task found</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tombol Scroll -->
+    <button id="scrollTopBtn" onclick="scrollToTop()">⬆️</button>
+    <button id="scrollBottomBtn" onclick="scrollToBottom()">⬇️</button>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
